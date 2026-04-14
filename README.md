@@ -10,3 +10,4 @@ This project demonstrates Jenkins CI pipeline.
 
 trigger build
 auto trigger test
+test auto trigger
