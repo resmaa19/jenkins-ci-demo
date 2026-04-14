@@ -9,5 +9,8 @@ df -h
 echo "Memory Usage:"
 free -m
 
+echo "Operating System:"
+uname -a
+
 exit 0
 
