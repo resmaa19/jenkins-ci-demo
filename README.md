@@ -8,3 +8,4 @@ Memory usage
 Jenkins CI pipeline demo project
 This project demonstrates Jenkins CI pipeline.
 
+trigger build
