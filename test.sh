@@ -6,7 +6,7 @@ echo "Running tests..."
 
 if [ $? -eq 0 ]; then
 echo "PASS"
-exit 1
+exit 0
 
 else
 echo "FAIL"
