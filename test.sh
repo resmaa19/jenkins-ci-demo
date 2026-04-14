@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Running tests..."
+
 ./app.sh
 
 if [ $? -eq 0 ]; then
