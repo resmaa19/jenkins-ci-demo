@@ -27,9 +27,6 @@ pipeline {
         }
 
         stage('Archive Artifacts') {
-            when {
-                branch 'main'
-            }
             steps {
                 archiveArtifacts artifacts: 'app.sh', fingerprint: true
             }
@@ -37,14 +34,18 @@ pipeline {
     }
 
     post {
+
         success {
             echo "Build Successful"
         }
+
         failure {
             echo "Build Failed: ${env.BUILD_URL}"
         }
+
         always {
             cleanWs()
         }
     }
 }
+
