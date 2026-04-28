@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         APP_VERSION = "1.0"
-        BUILD_TS = "${new Date().format('yyyy-MM-dd HH:mm:ss')}"
     }
 
     stages {
@@ -27,9 +26,6 @@ pipeline {
         }
 
         stage('Archive Artifacts') {
-            when {
-                branch 'main'
-            }
             steps {
                 archiveArtifacts artifacts: 'app.sh', fingerprint: true
             }
@@ -41,10 +37,7 @@ pipeline {
             echo "Build Successful"
         }
         failure {
-            echo "Build Failed: ${env.BUILD_URL}"
-        }
-        always {
-            cleanWs()
+            echo "Build Failed"
         }
     }
 }
