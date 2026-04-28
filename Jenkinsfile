@@ -26,6 +26,11 @@ pipeline {
         }
 
         stage('Archive Artifacts') {
+            when {
+               expression {
+                   env.BRANCH_NAME == 'main'         
+              }
+            }
             steps {
                 archiveArtifacts artifacts: 'app.sh', fingerprint: true
             }
